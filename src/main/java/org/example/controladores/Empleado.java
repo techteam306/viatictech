@@ -1,10 +1,14 @@
 package org.example.controladores;
 
+import java.util.ArrayList;
+import java.util.Scanner;
+
 public class Empleado {
+    Scanner entradaPorTeclado = new Scanner(System.in);
 
     //ATRIBUTOS
 
-    private String id,nombreCompleto,cargo;
+    private String id, nombre, apellido, cargo;
     private int edad;
     private double salario;
 
@@ -14,17 +18,16 @@ public class Empleado {
     public Empleado() {
     }
 
-    public Empleado(String id, String nombreCompleto, String cargo, int edad, double salario) {
+    public Empleado(String id, String nombre, String apellido, String cargo, int edad, double salario) {
         this.id = id;
-        this.nombreCompleto = nombreCompleto;
+        this.nombre = nombre;
+        this.apellido = apellido;
         this.cargo = cargo;
         this.edad = edad;
         this.salario = salario;
     }
 
     //METODOS
-
-
     public String getId() {
         return id;
     }
@@ -33,12 +36,20 @@ public class Empleado {
         this.id = id;
     }
 
-    public String getNombreCompleto() {
-        return nombreCompleto;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setNombreCompleto(String nombreCompleto) {
-        this.nombreCompleto = nombreCompleto;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getApellido() {
+        return apellido;
+    }
+
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
     }
 
     public String getCargo() {
@@ -54,13 +65,11 @@ public class Empleado {
     }
 
     public void setEdad(int edad) {
-        if(edad<18){
-            System.out.println("No puedes ser empleado, porque eres menor de edad.");
-        } else if(edad>=62){
-            System.out.println("No puedes ser empleado, ya estas jubilado.");
-        } else{
-            this.edad=edad;
+        while (edad <=17){
+            System.out.print("La edad minima debe de ser 18 años, ingrese nuevamente la edad: ");
+            edad = entradaPorTeclado.nextInt();
         }
+        this.edad=edad;
     }
 
     public double getSalario() {
@@ -70,4 +79,18 @@ public class Empleado {
     public void setSalario(double salario) {
         this.salario = salario;
     }
+
+    //Metodo de validacion
+    public Empleado buscarEmpleado (ArrayList<Empleado> empleados, String id){
+        Empleado empleadoEncontrado = null;
+        for (Empleado empleado:empleados) {
+            if (empleado.getId().equals(id)){
+
+                empleadoEncontrado = empleado;
+                break;
+            }
+        }
+        return empleadoEncontrado;
+    }
+
 }
