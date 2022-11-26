@@ -16,15 +16,21 @@ public class Main {
 
         //Creando menú
         int variableDeControl = 0;
-        System.out.println("\n***** Viatictech *****");
+        System.out.println("""
+                    -------------------------------------------
+                    |                Viatictech               |""");
         do{
-            System.out.println("\nMenu");
-            System.out.println("1. Registro de empleado");
-            System.out.println("2. Registro de viaje");
-            System.out.println("3. Ver empleados");
-            System.out.println("4. Ver viajes de un empleado");
-            System.out.println("0. Salir");
-            System.out.print("Digita una opcion del menu: ");
+            System.out.printf("""
+                    -------------------------------------------
+                    |Menu                                     |
+                    -------------------------------------------
+                    | 1.      Registro de empleado            |
+                    | 2.      Registro de viaje               |
+                    | 3.      Ver empleados                   |
+                    | 4.      Ver viajes de un empleado       |
+                    | 0.      Salir                           |
+                    -------------------------------------------
+                           Digita una opcion del menu:\s""");
             variableDeControl = entradaPorTeclado.nextInt();
 
             switch (variableDeControl){
