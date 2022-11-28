@@ -10,7 +10,6 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner entradaPorTeclado = new Scanner(System.in);
-        Empleado objetoEmpleado = new Empleado();
         Viaje objetoViaje = new Viaje();
         ArrayList<Empleado> empleados = new ArrayList<>();
 
@@ -35,10 +34,11 @@ public class Main {
 
             switch (variableDeControl){
                 case 1:
+                        Empleado objetoEmpleado = new Empleado();
                         System.out.println("\nRegitro de un empleado ");
                         System.out.print("-Ingrese el documento del empleado: ");
                         String id = entradaPorTeclado.next();
-
+                        
                     if (objetoEmpleado.buscarEmpleado(empleados, id)==null) {
                         objetoEmpleado.setId(id);
                         System.out.print("-Ingrese nombre del empleado: ");
@@ -55,7 +55,7 @@ public class Main {
                         empleados.add(objetoEmpleado);
 
                     }else {
-                        System.out.println("El empleado ya existe.");
+                        System.out.println("El empleado ya existe.\n");
                     }
                     break;
 
@@ -80,10 +80,15 @@ public class Main {
                     break;
 
                 case 3:
-                    System.out.println("Esta es la opcion 3");
+                    System.out.println("Lista de empleados: ");
+                    for (Empleado empleado: empleados) {
+                        System.out.println("Id del empleado: "+empleado.getId()+"\n"+"Nombre del empleado: "+empleado.getNombre() +
+                                "\n"+"Apellido del empleado: "+empleado.getApellido()+"\n"+"Edad del empleado: "+empleado.getEdad()+
+                                "\n"+"Cargo del empleado: "+empleado.getCargo()+"\n"+"Salario del empleado: $"+empleado.getSalario()+"\n");
+                    }
                     break;
                 case 4:
-                    System.out.println("Esta es la opcion 4");
+                    System.out.println("Esta es la opcion 4\n");
                     break;
                 case 0:
                     System.out.println("Saliste del Viatictech");
