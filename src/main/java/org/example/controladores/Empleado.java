@@ -93,4 +93,33 @@ public class Empleado {
         return empleadoEncontrado;
     }
 
+    public void calcularBono (Viaje empleadoEncontrado, Empleado empleado ){
+
+        switch (empleado.getCargo()){
+
+            case "JR":
+                if (empleadoEncontrado.getTipoViaje().equals("Nacional")){
+                    empleado.setSalario(empleado.getSalario()+(0.2*empleado.getSalario()));
+                    System.out.println("El empleado recibio un bono del 20% de su salario");
+                }else if (empleadoEncontrado.getTipoViaje().equals("Internacional")){
+                    empleado.setSalario(empleado.getSalario()+(0.4*empleado.getSalario()));
+                    System.out.println("El empleado recibio un bono del 40% de su salario");
+                }
+                break;
+
+            case "SR":
+                if (empleadoEncontrado.getTipoViaje().equals("Nacional")){
+                    empleado.setSalario(empleado.getSalario()+(0.3*empleado.getSalario()));
+                    System.out.println("El empleado recibio un bono del 30% de su salario");
+                }else if (empleadoEncontrado.getTipoViaje().equals("Internacional")){
+                    empleado.setSalario(empleado.getSalario()+(0.5*empleado.getSalario()));
+                    System.out.println("El empleado recibio un bono del 50% de su salario");
+                }
+                break;
+        }
+
+
+    }
+
+
 }

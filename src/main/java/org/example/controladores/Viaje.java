@@ -4,8 +4,8 @@ public class Viaje {
 
     //ATRIBUTOS
 
-    private String fechaIda,fechaVuelta,origen,destino,tipoViaje,tipoTransporte;
-    private double valorViaje;
+    private String fechaIda,fechaVuelta,origen,destino,tipoViaje,tipoTransporte,id;
+    private double valorViaje, totalAlimentos, totalAlojamiento, totalTranspote;
 
     //CONSTRUCTOR
 
@@ -13,18 +13,54 @@ public class Viaje {
     public Viaje() {
     }
 
-    public Viaje(String fechaIda, String fechaVuelta, String origen, String destino, String tipoViaje, String tipoTransporte, double valorViaje) {
+    public Viaje(String fechaIda, String fechaVuelta, String origen, String destino, String tipoViaje, String tipoTransporte, String id, double valorViaje, double totalAlimentos, double totalAlojamiento, double totalTranspote) {
         this.fechaIda = fechaIda;
         this.fechaVuelta = fechaVuelta;
         this.origen = origen;
         this.destino = destino;
         this.tipoViaje = tipoViaje;
         this.tipoTransporte = tipoTransporte;
+        this.id = id;
         this.valorViaje = valorViaje;
+        this.totalAlimentos = totalAlimentos;
+        this.totalAlojamiento = totalAlojamiento;
+        this.totalTranspote = totalTranspote;
     }
 
     //METODOS
 
+
+    public double getTotalAlimentos() {
+        return totalAlimentos;
+    }
+
+    public void setTotalAlimentos(double totalAlimentos) {
+        this.totalAlimentos = totalAlimentos;
+    }
+
+    public double getTotalAlojamiento() {
+        return totalAlojamiento;
+    }
+
+    public void setTotalAlojamiento(double totalAlojamiento) {
+        this.totalAlojamiento = totalAlojamiento;
+    }
+
+    public double getTotalTranspote() {
+        return totalTranspote;
+    }
+
+    public void setTotalTranspote(double totalTranspote) {
+        this.totalTranspote = totalTranspote;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public String getFechaIda() {
         return fechaIda;
