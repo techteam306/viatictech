@@ -8,7 +8,11 @@
         <outputRelativeToContentRoot value="true" />
         <module name="viatictech" />
         <module name="viaticosSAS" />
+        <module name="viati" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="viatictech" target="18" />
+    </bytecodeTargetLevel>
   </component>
 </project>

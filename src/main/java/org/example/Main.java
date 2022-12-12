@@ -36,7 +36,7 @@ public class Main {
 
             switch (variableDeControl){
                 case 1:
-
+                        objetoEmpleado = new Empleado();
                         System.out.println("\nRegitro de un empleado ");
                         System.out.print("-Ingrese el documento del empleado: ");
                         String id = entradaPorTeclado.next();
@@ -62,7 +62,7 @@ public class Main {
                     break;
 
                 case 2:
-
+                    objetoViaje = new Viaje();
                     System.out.print("-Ingrese el documento del empleado: ");
                     id = entradaPorTeclado.next();
                     Empleado empleadoEncontrado = objetoEmpleado.buscarEmpleado(empleados, id);
@@ -120,10 +120,10 @@ public class Main {
                             System.out.println("-El valor del ticket es: $"+ viaje.getValorViaje());
                             System.out.println("-El valor total de la alimentcion fue: "+ viaje.getTotalAlimentos());
                             System.out.println("-El valor del alojamiento fue: "+ viaje.getTotalAlojamiento());
-                            System.out.println("-El valor total del transporte fue: "+ viaje.getTotalTranspote());
+                            System.out.println("-El valor total del transporte fue: "+ viaje.getTotalTranspote()+"\n");
 
                         }else {
-                            System.out.println("El empleado no existe");
+                            System.out.println("El empleado no tiene viajes registrados o no existe");
                         }
                     }
                     break;
